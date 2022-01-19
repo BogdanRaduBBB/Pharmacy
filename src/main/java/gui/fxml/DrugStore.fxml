@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="514.0" prefWidth="701.0" style="-fx-background-color: #778899;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controllers.Controller">
+   <children>
+      <Pane>
+         <children>
+            <Label fx:id="titleLabel" alignment="CENTER" layoutX="120.0" layoutY="65.0" text="Bogdi`s Pharmacy" textFill="#414657">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+            <ImageView fx:id="mainImage" layoutX="14.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/icons8-pharmacy-store-to-buy-the-stock-of-medicine-96.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <HBox fx:id="topHBox" alignment="CENTER" layoutX="297.0" layoutY="31.0">
+         <children>
+            <Button fx:id="showMedBtn" mnemonicParsing="false" onAction="#switchToMedsScene" prefHeight="46.0" prefWidth="77.0" style="-fx-background-color: #b0c4de;" text="Medicine" />
+            <Button fx:id="healthSceneBtn" contentDisplay="TOP" mnemonicParsing="false" onAction="#switchToHealthScene" prefHeight="46.0" prefWidth="97.0" style="-fx-background-color: #b0c4de;" text="Health Care" />
+            <Button fx:id="sknBtn" mnemonicParsing="false" onAction="#switchToScScene" prefHeight="46.0" prefWidth="77.0" style="-fx-background-color: #b0c4de;" text="Skin Care" />
+            <Button fx:id="vitBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToVitaminScene" prefHeight="46.0" prefWidth="77.0" style="-fx-background-color: #b0c4de;" text="Vitamins" />
+            <Button fx:id="homeBtn" mnemonicParsing="false" onAction="#switchToMainScene" prefHeight="46.0" prefWidth="76.0" style="-fx-background-color: #b0c4de;" text="Home" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
