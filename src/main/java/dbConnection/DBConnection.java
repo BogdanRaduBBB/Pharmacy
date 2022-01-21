@@ -3,8 +3,10 @@ package dbConnection;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Skin;
 import pojo.HealthCare;
 import pojo.Medicine;
+import pojo.SkinCare;
 
 import java.sql.*;
 
@@ -82,6 +84,34 @@ public class DBConnection {
 
         return hProducts;
     }
+
+    public ObservableList<SkinCare> getAllScProducts() {
+        conn = dbConnect();
+        ObservableList<SkinCare> scProds = FXCollections.observableArrayList();
+        try (Statement stm = conn.createStatement();
+             ResultSet fullRs = stm.executeQuery("SELECT * FROM skincare;")
+        ) {
+            while (fullRs.next()) {
+                SkinCare scProd = new SkinCare(Integer.parseInt(fullRs.getString("id")),
+                        fullRs.getString("name"),
+                        Float.parseFloat(fullRs.getString("dosage")),
+                        Double.parseDouble(fullRs.getString("price")),
+                        Integer.parseInt(fullRs.getString("stock"))
+                );
+                if (scProd.getStock() > 0) {
+                    scProds.add(scProd);
+                }
+
+            }
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return scProds;
+    }
+
 
     public void buyProduct(int id) throws SQLException {
         conn = dbConnect();

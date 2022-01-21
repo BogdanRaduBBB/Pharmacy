@@ -34,7 +34,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <ImageView fx:id="hProductsMainImage" layoutX="24.0" layoutY="43.0"  pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="hProductsMainImage" layoutX="24.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../images/icons8-pharmacy-store-to-buy-the-stock-of-medicine-96.png" />
          </image>
@@ -42,88 +42,88 @@
       <HBox fx:id="topHBox" alignment="CENTER" layoutX="307.0" layoutY="41.0">
          <children>
             <Button fx:id="showMedBtn" mnemonicParsing="false" onAction="#switchToMedsScene" prefHeight="46.0" prefWidth="77.0" style="-fx-background-color: #b0c4de;" text="Medicine" />
-            <Button fx:id="showHProducts" contentDisplay="TOP" mnemonicParsing="false" prefHeight="46.0" prefWidth="97.0" style="-fx-background-color: #b0c4de;" text="Health Care" />
-            <Button mnemonicParsing="false" prefHeight="46.0" prefWidth="77.0" style="-fx-background-color: #b0c4de;" text="Skin Care" />
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="46.0" prefWidth="77.0" style="-fx-background-color: #b0c4de;" text="Vitamins" />
+            <Button fx:id="showHProducts" contentDisplay="TOP" mnemonicParsing="false" onAction="#switchToHealthScene" prefHeight="46.0" prefWidth="97.0" style="-fx-background-color: #b0c4de;" text="Health Care" />
+            <Button fx:id="scBtn" mnemonicParsing="false" onAction="#switchToScScene" prefHeight="46.0" prefWidth="77.0" style="-fx-background-color: #b0c4de;" text="Skin Care" />
+            <Button fx:id="vtmBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#switchToVitaminScene" prefHeight="46.0" prefWidth="77.0" style="-fx-background-color: #b0c4de;" text="Vitamins" />
             <Button fx:id="homeBtn" mnemonicParsing="false" onAction="#switchToMainScene" prefHeight="46.0" prefWidth="76.0" style="-fx-background-color: #b0c4de;" text="Home" />
          </children>
       </HBox>
       <Pane layoutX="156.0" layoutY="158.0" prefHeight="443.0" prefWidth="806.0">
-         <children>
-            <VBox layoutX="-2.0" prefHeight="443.0" prefWidth="472.0">
-               <children>
-                  <ListView fx:id="listViewOfhProducts" editable="true" fixedCellSize="75.0" prefHeight="444.0" prefWidth="237.0" />
-               </children>
-            </VBox>
-            <HBox layoutX="461.0" prefHeight="443.0" prefWidth="343.0">
-               <children>
-                  <AnchorPane prefHeight="446.0" prefWidth="347.0">
+         <VBox layoutX="-42.0" prefHeight="443.0" prefWidth="404.0">
+            <ListView fx:id="listViewOfH" editable="true" fixedCellSize="75.0" prefHeight="444.0" prefWidth="476.0" />
+         </VBox>
+         <HBox layoutX="393.0" prefHeight="446.0" prefWidth="404.0">
+            <children>
+               <AnchorPane prefHeight="446.0" prefWidth="436.0">
+                  <Pane fx:id="cartPane" layoutY="46.0" prefHeight="400.0" prefWidth="431.0">
+                     <ListView fx:id="cartListView" prefHeight="400.0" prefWidth="404.0" visible="false" />
+                  </Pane>
+                  <HBox fx:id="btnsHBox" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Button fx:id="delBtn" layoutX="181.0" minHeight="0.0" mnemonicParsing="false" onAction="#handleDeleteButton" prefHeight="46.0" prefWidth="56.0" style="-fx-background-color: #d3d3d3;">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <graphic>
-                              <ImageView fitHeight="53.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../images/delete.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button fx:id="addToCartBtn" layoutX="97.0" minHeight="0.0" mnemonicParsing="false" onAction="#addToCart" prefHeight="46.0" prefWidth="56.0" style="-fx-background-color: #b0c4de;">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <graphic>
-                              <ImageView fx:id="cartImg" fitHeight="53.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../images/cart.png" />
-                                 </image>
-                              </ImageView>
-                           </graphic>
-                        </Button>
-                        <Button fx:id="closeCart" layoutX="264.0" minHeight="0.0" mnemonicParsing="false" onAction="#hideCart" prefHeight="46.0" prefWidth="56.0" style="-fx-background-color: #cd5c5c;">
+                        <Button fx:id="closeCart" minHeight="0.0" mnemonicParsing="false" onAction="#hideCart" prefHeight="46.0" prefWidth="56.0" style="-fx-background-color: #cd5c5c;">
                            <font>
                               <Font size="18.0" />
                            </font>
                            <graphic>
                               <ImageView fx:id="clos" fitHeight="53.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../images/icons8-delete-64.png" />
-                                 </image>
+                                 <Image url="@../../images/icons8-delete-64.png" />
                               </ImageView>
                            </graphic>
                         </Button>
-                        <Pane fx:id="cartPane" layoutX="14.0" layoutY="46.0" prefHeight="400.0" prefWidth="324.0">
-                           <children>
-                              <ListView fx:id="cartListView" prefHeight="400.0" prefWidth="324.0" visible="false" />
-                           </children>
-                        </Pane>
-                        <Button fx:id="buyBtn" layoutX="14.0" minHeight="0.0" mnemonicParsing="false" onAction="#handleBuyButton" prefHeight="46.0" prefWidth="56.0" style="-fx-background-color: #228b22;">
+                        <Button fx:id="delBtn" minHeight="0.0" mnemonicParsing="false" onAction="#handleDeleteButton" prefHeight="46.0" prefWidth="56.0" style="-fx-background-color: #d3d3d3;">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="53.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <Image url="@../../images/delete.png" />
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="showCartBtn" minHeight="0.0" mnemonicParsing="false" onAction="#showCart" prefHeight="46.0" prefWidth="56.0" style="-fx-background-color: #b0c4de;">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fx:id="cartImg" fitHeight="53.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <Image url="@../../images/cart.png" />
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="addToCartBtn" minHeight="0.0" mnemonicParsing="false" onAction="#handleAddToCartBtn" prefHeight="46.0" prefWidth="56.0" style="-fx-background-color: #f5fffa;">
                            <font>
                               <Font size="18.0" />
                            </font>
                            <graphic>
                               <ImageView fitHeight="53.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../images/buy.png" />
+                                    <Image url="@../../images/addToCart.png" />
                                  </image>
                               </ImageView>
                            </graphic>
                         </Button>
+                        <Button fx:id="buyBtn" minHeight="0.0" mnemonicParsing="false" onAction="#handleBuyButton" prefHeight="46.0" prefWidth="56.0" style="-fx-background-color: #228b22;">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="53.0" fitWidth="59.0" pickOnBounds="true" preserveRatio="true">
+                                 <Image url="@../../images/buy.png" />
+                              </ImageView>
+                           </graphic>
+                        </Button>
                      </children>
-                  </AnchorPane>
-               </children>
-            </HBox>
-         </children>
+                  </HBox>
+               </AnchorPane>
+            </children>
+         </HBox>
       </Pane>
-      <MenuButton layoutX="547.0" layoutY="127.0" mnemonicParsing="false" text="Sort by...">
-        <items>
-          <MenuItem fx:id="nameBtn" mnemonicParsing="false" onAction="#sorthProductsByName" text="Name (A-Z)" />
-          <MenuItem fx:id="ascBtn" mnemonicParsing="false" onAction="#sortAschProducts" text="Price low to high" />
-            <MenuItem fx:id="descBtn" mnemonicParsing="false" onAction="#sortAschProducts" text="Price high to low" />
-        </items>
+      <MenuButton layoutX="443.0" layoutY="127.0" mnemonicParsing="false" text="Sort by...">
+         <items>
+            <MenuItem fx:id="nameBtn" mnemonicParsing="false" onAction="#sortHProdsByName" text="Name (A-Z)" />
+            <MenuItem fx:id="ascBtn" mnemonicParsing="false" onAction="#sortAscH" text="Price low to high" />
+            <MenuItem fx:id="descBtn" mnemonicParsing="false" onAction="#sortDescH" text="Price high to low" />
+         </items>
       </MenuButton>
    </children>
 </AnchorPane>

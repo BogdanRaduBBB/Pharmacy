@@ -119,11 +119,11 @@
          </children>
       </Pane>
       <MenuButton layoutX="547.0" layoutY="127.0" mnemonicParsing="false" text="Sort by...">
-        <items>
-          <MenuItem fx:id="nameBtn" mnemonicParsing="false" onAction="#sortMedsByName" text="Name (A-Z)" />
-          <MenuItem fx:id="ascBtn" mnemonicParsing="false" onAction="#sortAscMeds" text="Price low to high" />
+         <items>
+            <MenuItem fx:id="nameBtn" mnemonicParsing="false" onAction="#sortMedsByName" text="Name (A-Z)" />
+            <MenuItem fx:id="ascBtn" mnemonicParsing="false" onAction="#sortAscMeds" text="Price low to high" />
             <MenuItem fx:id="descBtn" mnemonicParsing="false" onAction="#sortDescMeds" text="Price high to low" />
-        </items>
+         </items>
       </MenuButton>
    </children>
 </AnchorPane>
